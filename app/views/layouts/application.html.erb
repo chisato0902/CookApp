@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CoolApp</title>
+    <title>CookPro</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -17,14 +17,21 @@
         </a>
       </div>
       <ul class="header-menus">
-        <a href="/home/about">CookProとは</a>
-      </ul>
-      <ul class="header-menus">
-        <a href="/posts/index">投稿一覧</a>
+        <a href="/posts">投稿一覧</a>
       </ul>
       <ul class="header-menus">
         <a href="/posts/new">新規投稿</a>
       </ul>
+    </ul>
+    <ul class="header-menus">
+      <a href="/users">ユーザ〜一覧</a>
+    </ul>
+    <ul class="header-menus">
+      <a href="/signup">新規登録</a>
+    </ul>
+    <ul class="header-menus">
+      <a href="/home/about">CookProとは</a>
+    </ul>
     </header>
     <%= yield %>
   </body>
