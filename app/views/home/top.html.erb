@@ -2,8 +2,14 @@
 
 <div class="main top-main">
   <div class="top-message">
-    <h1>今日のメニューはCookProで決めよう</h1>
-    <p>レシピを閲覧・投稿してみよう</p>
-    <a href="/signup">新規登録はこちらから</a>
+    <% if session[:user_id] %>
+
+    <% else %>
+      <h1>今日のメニューはCookProで決めよう</h1>
+      <p>レシピを閲覧・投稿してみよう</p>
+      <a href="/login">ログイン</a>
+      <br>
+      <a href="/signup" class="top-signup">新規登録はこちらから</a>
+    <% end %>
   </div>
 </div>

@@ -13,25 +13,42 @@
     <header>
       <div class="header-logo">
         <a href="/home/top">
-        CookPro
+          CookPro
         </a>
       </div>
+      <% if session[:user_id] %>
       <ul class="header-menus">
-        <a href="/posts">投稿一覧</a>
+          <% current_user = User.find_by(id: session[:user_id]) %>
+          <li>
+            <%= link_to("マイページ", "/users/#{current_user.id}") %>
+          </li>
+
+          <li>
+            <a href="/posts">投稿一覧</a>
+          </li>
+          <li>
+            <a href="/users">ユーザ〜一覧</a>
+          </li>
+          <li>
+            <a href="/posts/new">新規投稿</a>
+          </li>
+          <li>
+            <%= link_to("ログアウト", "/logout",method: :post) %>
+          </li>
       </ul>
+      <% else %>
       <ul class="header-menus">
-        <a href="/posts/new">新規投稿</a>
+          <li>
+            <a href="/signup">新規登録</a>
+          </li>
+          <li>
+            <a href="/login">ログイン</a>
+          </li>
+          <li>
+            <a href="/home/about">CookProとは</a>
+          </li>
       </ul>
-    </ul>
-    <ul class="header-menus">
-      <a href="/users">ユーザ〜一覧</a>
-    </ul>
-    <ul class="header-menus">
-      <a href="/signup">新規登録</a>
-    </ul>
-    <ul class="header-menus">
-      <a href="/home/about">CookProとは</a>
-    </ul>
+      <% end %>
     </header>
     <%= yield %>
   </body>
