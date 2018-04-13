@@ -11,12 +11,12 @@
 
   <body>
     <header>
+      <% if session[:user_id] %>
       <div class="header-logo">
-        <a href="/home/top">
+        <a href="/posts">
           CookPro
         </a>
       </div>
-      <% if session[:user_id] %>
       <ul class="header-menus">
           <% current_user = User.find_by(id: session[:user_id]) %>
           <li>
@@ -37,6 +37,11 @@
           </li>
       </ul>
       <% else %>
+      <div class="header-logo">
+        <a href="/home/top">
+          CookPro
+        </a>
+      </div>
       <ul class="header-menus">
           <li>
             <a href="/signup">新規登録</a>

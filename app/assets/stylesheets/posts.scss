@@ -3,10 +3,12 @@
   width: 700px;
   height: 300px;
   padding: 20px 30px;
-  margin: 300px, 300px, 300px, 300px;
   background-color: white;
   overflow: hidden;
   box-shadow: 0 2px 6px #c1ced7;
+  display: table;
+  width: 100%;
+  margin-top: 10px;
 }
 
 .post-left img {
@@ -81,7 +83,7 @@ box-shadow: 0 2px 6px #c1ced7;*/
 
 .post-time {
   color: #8899a6;
-  margin-bottom: 10px;
+  margin-top: 130px;
 }
 
 .post-menus {
